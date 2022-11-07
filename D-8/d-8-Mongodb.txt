@@ -45,7 +45,7 @@ db.mensajes.find()
 4)Mostrar la cantidad de documentos almacenados en cada una de ellas.
 
 db.productos.estimatedDocumentCount()
-
+s
 
 5)Realizar un CRUD sobre la colección de productos:
     a- Agregar un producto más en la colección de productos 
