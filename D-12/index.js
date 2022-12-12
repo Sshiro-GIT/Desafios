@@ -6,11 +6,12 @@ const { Server: HttpServer } = require("http");
 const { Server: IOServer } = require("socket.io");
 const path = require("path");
 const routes = require("./routers/app.routes");
+
 const app = express();
 const httpServer = new HttpServer(app);
 const io = new IOServer(httpServer);
-const PORT = process.env.PORT || 8080;
 
+const PORT = process.env.PORT || 8080;
 const MongoStore = require("connect-mongo");
 const adavancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 
@@ -65,7 +66,6 @@ io.on("connection", async (socket) => {
     apiChat.writeChatToFile(messages);
   });
 });
-
 
 app.use(function (err, req, res, next) {
   console.log(err.stack);
